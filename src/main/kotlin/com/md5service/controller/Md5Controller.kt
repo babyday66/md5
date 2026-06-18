@@ -5,16 +5,16 @@ import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/api/md5")
-class Md5Controller(private val md5Service: Md5Service) {
+open class Md5Controller(private val md5Service: Md5Service) {
 
     @PostMapping("/calculate")
-    fun calculateMd5(@RequestBody request: Md5Request): Md5Response {
+    open fun calculateMd5(@RequestBody request: Md5Request): Md5Response {
         val hash = md5Service.calculateMd5(request.text)
         return Md5Response(input = request.text, hash = hash)
     }
 
     @GetMapping("/calculate")
-    fun calculateMd5FromQuery(@RequestParam text: String): Md5Response {
+    open fun calculateMd5FromQuery(@RequestParam text: String): Md5Response {
         val hash = md5Service.calculateMd5(text)
         return Md5Response(input = text, hash = hash)
     }
