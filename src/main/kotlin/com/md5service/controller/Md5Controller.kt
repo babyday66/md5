@@ -18,10 +18,15 @@ open class Md5Controller(private val md5Service: Md5Service) {
         val hash = md5Service.calculateMd5(text)
         return Md5Response(input = text, hash = hash)
     }
+
+    @GetMapping("/health")
+    open fun health(): Map<String, String> {
+        return mapOf("status" to "UP", "service" to "MD5 Service")
+    }
 }
 
 data class Md5Request(
-    val text: String
+    val text: String = ""
 )
 
 data class Md5Response(
