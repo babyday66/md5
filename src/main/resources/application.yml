@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: md5-service
+  profiles:
+    active: dev
+
+server:
+  port: 8080
+
+logging:
+  level:
+    root: INFO
+    com.md5service: DEBUG

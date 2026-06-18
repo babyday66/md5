@@ -1,0 +1,20 @@
+# IDE
+.idea/
+.vscode/
+*.iml
+*.swp
+*.swo
+*~
+
+# Build
+target/
+build/
+out/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local
